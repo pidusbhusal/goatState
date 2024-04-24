@@ -1,3 +1,4 @@
+@import "../../reponsive.scss";
 nav {
   justify-content: space-between;
   display: flex;
@@ -6,6 +7,11 @@ nav {
 
   a {
     transition: all 0.2s ease-in-out;
+
+    @include sm {
+      display: none;
+    }
+
     &:hover {
       scale: 1.05;
     }
@@ -22,19 +28,31 @@ nav {
       display: flex;
       align-items: center;
       gap: 10px;
+
+      span {
+        @include md {
+          display: none;
+        }
+      }
+
       img {
         width: 28px;
       }
     }
   }
+
   .rightside {
     flex: 2;
     display: flex;
     align-items: center;
-    gap: 50px;
+
     justify-content: flex-end;
     background-color: #fcf5f3;
     height: 100%;
+
+    @include md {
+      background-color: transparent;
+    }
     a {
       padding: 12px 24px;
       margin: 20px;
@@ -42,6 +60,45 @@ nav {
     }
     .signUp {
       background-color: #fece51;
+    }
+    .menuicon {
+      display: none;
+      z-index: 9999;
+      img {
+        width: 36px;
+        cursor: pointer;
+      }
+
+      @include sm {
+        display: inline;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    top: 0;
+    right: -50%;
+    padding: 0 100px;
+    transition: all 0.5s ease-in-out;
+
+    @include sm {
+      a {
+        display: initial;
+        padding: 14px 20px;
+        font-size: 24px;
+      }
+
+      &.active {
+        right: 0;
+      }
     }
   }
 }
