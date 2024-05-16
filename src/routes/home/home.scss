@@ -1,0 +1,49 @@
+@import "../../layout.scss";
+.homePage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+    .textWrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+
+      height: 100%;
+
+      .title {
+        font-size: 64px;
+      }
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+          font-size: 36px;
+        }
+        h4 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .imageContainer {
+    @include md {
+      display: none;
+    }
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 115%;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
