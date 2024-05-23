@@ -15,7 +15,11 @@
       height: 100%;
 
       .title {
-        font-size: 64px;
+        font-size: 4rem;
+        @include sm {
+          font-size: 3rem;
+          word-wrap: break-word;
+        }
       }
       .stats {
         display: flex;
